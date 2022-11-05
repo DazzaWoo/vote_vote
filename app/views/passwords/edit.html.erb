@@ -1,12 +1,12 @@
-<h1>Sign Up</h1>
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<h1>Edit Password</h1>
+<%= form_with model: Current.user, url: edit_password_path do |form| %>
   <% if form.object.errors.any? %>
     <div>
       <% form.object.errors.full_messages.each do |message| %>
         <p><%= message %></p>
       <% end %>
     </div>
-  <% end %> 
+  <% end %>
   
   <div class="mb-3">
     <%= form.label :email, 'Email: ' %>
@@ -21,6 +21,6 @@
     <%= form.password_field :passord_confirmation, placeholder: 'password', class: 'form-control' %>
   </div>
   <div class="mb-3">
-    <%= form.submit 'sign up', class: 'btn btn-primary' %>
+    <%= form.submit 'Update Password', class: 'btn btn-primary' %>
   </div>
 <% end %>
