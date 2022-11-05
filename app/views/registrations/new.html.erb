@@ -8,19 +8,19 @@
     </div>
   <% end %>
   
-  <div>
+  <div class="mb-3">
     <%= form.label :email, 'Email: ' %>
-    <%= form.text_field :email, placeholder: 'steve@mail.com' %>
+    <%= form.text_field :email, placeholder: 'steve@mail.com', class: 'form-control' %>
   </div>
-  <div>
+  <div class="mb-3">
     <%= form.label :password, 'Password: ' %>
-    <%= form.password_field :password, placeholder: 'password' %>
+    <%= form.password_field :password, placeholder: 'password', class: 'form-control' %>
   </div>
-  <div>
+  <div class="mb-3">
     <%= form.label :passord_confirmation, 'Password_confirmation: ' %>
-    <%= form.password_field :passord_confirmation, placeholder: 'password' %>
+    <%= form.password_field :passord_confirmation, placeholder: 'password', class: 'form-control' %>
   </div>
-  <div>
-    <%= form.submit 'sign up' %>
+  <div class="mb-3">
+    <%= form.submit 'sign up', class: 'btn btn-primary' %>
   </div>
 <% end %>
