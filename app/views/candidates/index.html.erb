@@ -1,0 +1,30 @@
+<h1>Candidates List</h1>
+<%= link_to 'add a candidate', new_candidate_path %>
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Name</td>
+      <td>party</td>
+      <td>age</td>
+      <td>politics</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+    <tr>
+      <td><%= candidate.vote_logs.size %></td>
+      <td><%= link_to 'vote', vote_candidate_path(candidate), method: 'post' %></td>
+      <td><%= link_to candidate.name, candidate %></td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.age %></td>
+      <td><%= candidate.politics %></td>
+      <td>
+        <%= link_to 'edit', edit_candidate_path(candidate) %>
+        <%= link_to 'delete', candidate, method: 'delete', data: { confirm: 'Do you want to delete' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
